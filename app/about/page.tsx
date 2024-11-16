@@ -1,12 +1,11 @@
 import Link from "next/link";
+import HomeBar from "../home-bar";
 
 export default function About() {
   return (
-    <>
-      <h1>About Page</h1>
-      <div>
-        Back to <Link href="/">Home</Link>
-      </div>
-    </>
+    <div>
+      <HomeBar/>
+      <div id="main-content"></div>
+    </div>
   );
 }
