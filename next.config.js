@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/gh-tc",
+  basePath: "/gi-tc",
 };
 
 module.exports = nextConfig;
