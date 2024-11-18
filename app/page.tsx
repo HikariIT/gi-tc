@@ -1,12 +1,10 @@
-import HomeBar from "./home-bar";
-import variables from '../styles/variables.module.sass';
-import HomePage from "./home-page";
+import '../styles/style.sass';
+import '../styles/pages/_home.sass';
 
 export default function Home() {
   return (
     <div>
-      <HomeBar/>
-      <HomePage/>
+      <h1>Test</h1>
     </div>
   );
 }
