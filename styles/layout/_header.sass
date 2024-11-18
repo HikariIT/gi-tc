@@ -23,14 +23,30 @@
         padding: 1rem
         flex-direction: column
 
-#gi-nav
+.nav-visible
     display: flex
+    flex-direction: row
     margin-left: auto
 
     @include mq($from: mobile, $until: tablet)
+        animation: drop-down 1s
+        overflow: hidden
+        width: 100%
         padding: 1rem
         flex-direction: column
         margin-left: 0
+        display: flex
+
+.nav-hidden
+    display: flex
+    flex-direction: row
+    margin-left: auto
+
+    @include mq($from: mobile, $until: tablet)
+        display: none
+
+#gi-nav
+    display: flex
 
 #gi-header__title-with-button
     width: 100%
@@ -50,7 +66,6 @@
         margin-left: auto
 
 #gi-nav__list
-    display: flex
     list-style-type: none
 
     @include mq($from: mobile, $until: tablet)
@@ -82,3 +97,9 @@
 
     &:hover
         text-decoration: underline
+
+@keyframes drop-down
+  from
+    max-height: 0vh
+  to
+    max-height: 60vh

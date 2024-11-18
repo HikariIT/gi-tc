@@ -7,7 +7,7 @@ import { FaBars } from "react-icons/fa";
 
 
 export default function Header() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
         setIsOpen(!isOpen);
@@ -23,7 +23,7 @@ export default function Header() {
           <button id="gi-header__button" onClick={handleClick} type={"button"}><FaBars size={20}/></button>
         </div>
         <nav id="gi-nav">
-            <ul style={{ display: isOpen ? "flex" : "none"}} id="gi-nav__list">
+            <ul className={isOpen ? 'nav-visible' : 'nav-hidden'} id="gi-nav__list">
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/characters">Characters</Link></li>
                 <li><Link href="/builds">Builds</Link></li>

@@ -1,0 +1,15 @@
+@use 'sass-mq' as * with ($breakpoints: (mobile: 320px, tablet: 768px, desktop: 1024px, widescreen: 1200px))
+
+.app-description
+    font-size: 1.5em
+    line-height: 1.5
+    margin-bottom: 1em
+    text-align: justify
+
+
+    @include mq($from: mobile, $until: tablet)
+        font-size: 1.2em
+        line-height: 1.5
+        margin-bottom: 0.5em
+        text-align: justify
+

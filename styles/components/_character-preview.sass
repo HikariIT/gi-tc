@@ -1,0 +1,59 @@
+@use '../abstracts/_variables.sass' as vars
+@use 'sass-mq' as *
+
+.character-horizontal-card
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    padding-left: 3rem
+    border-radius: 10vmin
+    background-color: rgba(255, 255, 255, 0.7)
+    background-position: right
+    background-repeat: no-repeat
+    border: 5px solid #fff
+    box-shadow: 0 0 1rem rgba(#000, 0.1)
+    transition: transform 0.2s
+    margin-bottom: 2rem
+    overflow: hidden
+
+    &:hover
+        transform: scale(1.01)
+
+    @include mq($from: mobile, $until: tablet)
+        flex-direction: column
+        padding-left: 1rem
+        background-position-x: 20%
+
+.character-horizontal-card__image-container
+    display: flex
+    justify-content: center
+    align-items: center
+
+    img
+        margin-right: 2rem
+
+    h1
+        font-size: 2rem
+        color: vars.$palette-primary-dark
+        padding: 0 1rem 0 0
+        margin: 0 1rem 0 0
+        border-right: 2px solid vars.$palette-secondary-dark
+
+        @include mq($from: mobile, $until: tablet)
+            font-size: 1.5rem
+            border: none
+
+    span
+        color: vars.$palette-secondary-dark
+        font-size: 1.5rem
+
+        @include mq($from: mobile, $until: tablet)
+            visibility: hidden
+
+#character-preview-container
+    hr
+        margin: 0
+        border: 0
+        border-top: 2px solid vars.$palette-secondary-light
+        margin-bottom: 2rem
