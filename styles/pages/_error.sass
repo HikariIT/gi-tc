@@ -1,0 +1,33 @@
+@use '../abstracts/_variables.sass' as vars
+
+#error
+    font-family: var(--font-questrial-sans)
+    display: flex
+    margin-bottom: 2rem
+
+#error__code
+    display: flex
+    align-items: center
+    padding: 1rem 1rem 1rem 0
+    border-right: 1px solid black
+    margin-right: 1rem
+
+#error__description
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    p
+        margin: 0.5rem 0
+
+    a
+        color: vars.$palette-text
+        text-decoration: none
+        font-weight: bold
+
+#error-container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 100vh

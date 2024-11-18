@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Questrial } from "next/font/google";
+import { Questrial, Young_Serif } from "next/font/google";
 import Footer from "../components/footer";
+import Header from "../components/header";
 import '../styles/layout/_content.sass';
 
 const questrial_init = Questrial({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400'],
   variable: '--font-questrial-sans',
+});
+
+const serif_init = Young_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-young-serif',
 });
 
 export const metadata: Metadata = {
@@ -17,8 +24,9 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={`${questrial_init.variable}`}>
-        <main className='questrial-sans'>
+      <body className={`${questrial_init.variable} ${serif_init.variable}`}>
+        <main>
+          <Header/>
           {children}
           <Footer/>
         </main>

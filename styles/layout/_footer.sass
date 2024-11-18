@@ -1,9 +1,55 @@
 @use '../abstracts/_variables.sass' as vars
+@use 'sass-mq' as * with ($breakpoints: (mobile: 320px, tablet: 768px, desktop: 1024px, widescreen: 1200px))
+/* $show-breakpoints: (mobile, tablet, desktop, widescreen) */
 
 #gi-footer
     background-color: vars.$palette-secondary-dark
-    display: flex
-    padding: 1rem
+    padding: 2rem
+    font-family: var(--font-questrial-sans)
+    font-size: 1rem
+    overflow: hidden
+    position: relative
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
 
-#gi-footer > *
-  flex:  1 100%
+    h1
+        font-size: 1.5rem
+        letter-spacing: 0.1rem
+        text-transform: uppercase
+        margin-top: 0
+
+#footer-img
+    position: absolute
+    top: -50px
+    right: 50px
+    width: 469px
+    height: 364px
+    transform: scale(1.2)
+    opacity: 2%
+
+    @include mq($from: mobile, $until: tablet)
+        left: 50%
+        top: 50%
+        transform: scale(0.8) translate(-62%, -60%)
+
+
+#footer__project-link
+    display: flex
+    margin-bottom: 5rem
+
+#footer__project-link a
+    color: vars.$palette-text
+    text-decoration: none
+    align-items: center
+    justify-content: center
+    display: flex
+
+#footer__bottom
+    display: flex
+    justify-content: space-between
+
+    @include mq($from: mobile, $until: tablet)
+        flex-direction: column
+
+#footer__bottom > *
+    @include mq($from: mobile, $until: tablet)
+        margin-bottom: 1rem

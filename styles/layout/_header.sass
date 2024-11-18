@@ -1,0 +1,84 @@
+@use '../abstracts/_variables.sass' as vars
+@use 'sass-mq' as * with ($breakpoints: (mobile: 320px, tablet: 768px, desktop: 1024px, widescreen: 1200px))
+/* $show-breakpoints: (mobile, tablet, desktop, widescreen) */
+
+
+#gi-header
+    display: flex
+    padding: 2rem
+    font-family: var(--font-questrial-sans)
+    font-size: 1rem
+
+    h1
+        margin: 0
+        font-size: 2rem
+        font-style: normal
+        font-family: var(--font-young-serif)
+
+    span
+        font-size: 1.1rem
+        font-style: italic
+
+    @include mq($from: mobile, $until: tablet)
+        padding: 1rem
+        flex-direction: column
+
+#gi-nav
+    display: flex
+    margin-left: auto
+
+    @include mq($from: mobile, $until: tablet)
+        padding: 1rem
+        flex-direction: column
+        margin-left: 0
+
+#gi-header__title-with-button
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+#gi-header__button
+    display: none
+    border: none
+    background-color: transparent
+    color: vars.$palette-text
+    justify-content: center
+    align-items: center
+
+    @include mq($from: mobile, $until: tablet)
+        display: flex
+        margin-left: auto
+
+#gi-nav__list
+    display: flex
+    list-style-type: none
+
+    @include mq($from: mobile, $until: tablet)
+        background-color: vars.$palette-secondary-dark
+        flex-direction: column
+        padding: 0
+
+
+#gi-nav__list li
+    margin: 0 1rem
+    display: flex
+    justify-content: center
+    align-items: center
+
+    @include mq($from: mobile, $until: tablet)
+        flex-direction: column
+        padding: 0 1rem 1rem 1rem
+        border-bottom: 1px solid vars.$palette-secondary-light
+        margin-bottom: 1rem
+
+#gi-nav__list li:first-child
+    @include mq($from: mobile, $until: tablet)
+        padding-top: 1rem
+
+#gi-nav a
+    color: vars.$palette-text
+    text-decoration: none
+    margin: 0 1rem
+
+    &:hover
+        text-decoration: underline

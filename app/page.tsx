@@ -4,7 +4,10 @@ import '../styles/pages/_home.sass';
 export default function Home() {
   return (
     <div>
-      <h1>Test</h1>
+      <div id="loader-container">
+        <p>Website is currently under construction. Stay tuned!</p>
+        <p>~ Hikari ~</p>
+      </div>
     </div>
   );
 }
