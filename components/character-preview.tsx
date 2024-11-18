@@ -1,25 +1,21 @@
-import Image from "next/image";
+import CharacterHorizontalBar from "./character-horizontal-bar"
 
-type CharacterProps = {
-    name: string;
-};
 
-function getCharacterNamecard(name: string) {
-    return `url('/gi-tc/images/namecards/banner-${name.toLowerCase()}.png')`;
+function fetchCharacters() {
+    return ['Furina', 'Chiori', 'Kachina', 'Bennett']
 }
 
-function getCharacterIcon(name: string) {
-    return `/gi-tc/images/icons/icon-${name.toLowerCase()}.png`;
-}
 
-export default function CharacterPreview(character: CharacterProps) {
+export default function CharacterPreview() {
+    const characterList = fetchCharacters()
+
     return (
-      <div className="character-horizontal-card" style={{"backgroundImage": getCharacterNamecard(character.name)}}>
-        <div className="character-horizontal-card__image-container">
-            <Image src={getCharacterIcon(character.name)} alt={character.name} width={100} height={100} unoptimized/>
-            <h1>{character.name}</h1>
-            <span>Currently saved Loadouts: 0</span>
-        </div>
+      <div key="characterContainer" className='generic-shadow-container' id="character-preview-container">
+        <h1 className="container-title">Character Preview</h1>
+        <hr/>
+        {characterList.map((character) => (
+          <CharacterHorizontalBar name={character}/>
+        ))}
       </div>
-    );
+    )
 }
