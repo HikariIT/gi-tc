@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Furina",
+        "element": "Hydro",
+        "weapon": "Sword",
+        "rarity": 5
+    },
+    {
+        "name": "Chiori",
+        "element": "Geo",
+        "weapon": "Sword",
+        "rarity": 5
+    },
+    {
+        "name": "Kachina",
+        "element": "Geo",
+        "weapon": "Polearm",
+        "rarity": 4
+    },
+    {
+        "name": "Bennett",
+        "element": "Pyro",
+        "weapon": "Sword",
+        "rarity": 4
+    }
+]
