@@ -57,3 +57,19 @@
         border: 0
         border-top: 2px solid vars.$palette-secondary-light
         margin-bottom: 2rem
+
+#filters-and-search
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 1rem
+
+    input
+        color: vars.$palette-primary-dark
+        padding: 0.5rem
+        @include mq($from: mobile, $until: tablet)
+            margin-top: 0.5rem
+
+
+    @include mq($from: mobile, $until: tablet)
+        flex-direction: column
