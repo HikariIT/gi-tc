@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Questrial, Young_Serif } from "next/font/google";
-import Footer from "../components/footer";
-import Header from "../components/header";
+import { Footer, Header } from "../components/layout";
 import '../styles/layout/_content.sass';
 
 const questrial_init = Questrial({

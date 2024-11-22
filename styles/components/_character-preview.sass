@@ -4,8 +4,7 @@
 .character-horizontal-card
     display: flex
     flex-direction: row
-    align-items: center
-    justify-content: space-between
+    align-items: start
     padding-left: 3rem
     border-radius: 10vmin
     background-color: rgba(255, 255, 255, 0.7)
@@ -27,11 +26,18 @@
 
 .character-horizontal-card__image-container
     display: flex
-    justify-content: center
+    justify-content: space-between
     align-items: center
 
     img
         margin-right: 2rem
+
+    span
+        color: vars.$palette-secondary-dark
+        font-size: 1.5rem
+
+        @include mq($from: mobile, $until: tablet)
+            display: none
 
     h1
         font-size: 2rem
@@ -43,13 +49,6 @@
         @include mq($from: mobile, $until: tablet)
             font-size: 1.5rem
             border: none
-
-    span
-        color: vars.$palette-secondary-dark
-        font-size: 1.5rem
-
-        @include mq($from: mobile, $until: tablet)
-            visibility: hidden
 
 #character-preview-container
     hr

@@ -1,7 +1,7 @@
 import '../styles/style.sass';
 import '../styles/pages/_home.sass';
-import HomeDescription from '../components/home-description';
-import CharacterPreview from '../components/character-preview';
+import { HomeDescription } from '../components';
+import { CharacterPreview } from '../components/characters';
 
 
 export default function Home() {
