@@ -20,10 +20,12 @@ export function CharacterPreview() {
     const allRarities = ['4★', '5★']
 
     useEffect(() => {
-        fetch('/gi-tc/data/character_list.json')
+        fetch('/gi-tc/data/characterList.json')
             .then(response => response.json())
             .then(characterList => {
-                setCharacterList(characterList)
+                setCharacterList(characterList);
+
+                console.log(characterList)
 
                 const elementSet = new Set<string>(characterList.map((character: CharacterBaseModel) => character.element));
                 const weaponSet = new Set<string>(characterList.map((character: CharacterBaseModel) => character.weapon));
@@ -108,30 +110,34 @@ export function CharacterPreview() {
     }, [filteredElements, filteredWeapons])
 
     return (
-      <div key="characterContainer" className='generic-shadow-container' id="character-preview-container">
-        <h1 className="container-title">Character Preview</h1>
-        <div id="filters-and-search">
-          <div className="filter-container">
-            <div className="filter-icon-container">
-              <FaFilter size={20}/>
+      <div key="character-container" className='generic-shadow-container' id="character-preview-container">
+        <div id="filters-top-menu">
+          <h1 className="container-title">Character Preview</h1>
+          <div id="filters-and-search">
+            <div className="filter-container">
+              <div className="filter-icon-container">
+                <FaFilter size={20}/>
+              </div>
+              <div className="filter-group">
+                <TogglableList title="Element" allItems={allElements} filteredItems={filteredElements} toggleItem={toggleElementFilter}/>
+              </div>
+              <div className="filter-group">
+                <TogglableList title="Weapon" allItems={allWeapons} filteredItems={filteredWeapons} toggleItem={toggleWeaponFilter}/>
+              </div>
+              <div className="filter-group">
+                <TogglableList title="Rarity" allItems={allRarities} filteredItems={filteredRarities} toggleItem={toggleRarityFilter}/>
+              </div>
             </div>
-            <div className="filter-group">
-              <TogglableList title="Element" allItems={allElements} filteredItems={filteredElements} toggleItem={toggleElementFilter}/>
-            </div>
-            <div className="filter-group">
-              <TogglableList title="Weapon" allItems={allWeapons} filteredItems={filteredWeapons} toggleItem={toggleWeaponFilter}/>
-            </div>
-            <div className="filter-group">
-              <TogglableList title="Rarity" allItems={allRarities} filteredItems={filteredRarities} toggleItem={toggleRarityFilter}/>
-            </div>
+            <input type="text" placeholder="Search" value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
           </div>
-          <input type="text" placeholder="Search" value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
+          <hr/>
         </div>
-        <hr/>
-        <Loader condition={!charactersLoaded}/>
-        {allCharacters.map((character) => (
-          isCharacterSearched(character) && doesCharacterMatchFilter(character) && <CharacterHorizontalBar key={character.name.toLowerCase()} character={character}/>
-        ))}
+        <div id="character-list">
+          <Loader condition={!charactersLoaded}/>
+          {allCharacters.map((character) => (
+            isCharacterSearched(character) && doesCharacterMatchFilter(character) && <CharacterHorizontalBar key={character.name.toLowerCase()} character={character}/>
+          ))}
+        </div>
       </div>
     )
 }

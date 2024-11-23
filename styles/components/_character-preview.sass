@@ -14,7 +14,6 @@
     box-shadow: 0 0 1rem rgba(#000, 0.1)
     transition: transform 0.2s
     margin-bottom: 2rem
-    overflow: hidden
 
     &:hover
         transform: scale(1.01)
@@ -51,11 +50,23 @@
             border: none
 
 #character-preview-container
+    padding: 0
+    height: 100vh
+    overflow-y: scroll
+    display: flex
+
     hr
         margin: 0
         border: 0
         border-top: 2px solid vars.$palette-secondary-light
         margin-bottom: 2rem
+
+#filters-top-menu
+    position: sticky
+    top: 0
+    z-index: 10
+    padding: 2rem
+    background-color: vars.$palette-secondary-dark
 
 #filters-and-search
     display: flex
@@ -72,3 +83,12 @@
 
     @include mq($from: mobile, $until: tablet)
         flex-direction: column
+
+#character-list
+    padding: 2rem
+
+::-webkit-scrollbar
+    width: 12px
+
+::-webkit-scrollbar-thumb
+    background: vars.$palette-secondary-light

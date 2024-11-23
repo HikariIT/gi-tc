@@ -128,6 +128,14 @@
         "gameId": "Chongyun"
     },
     {
+        "name": "Citlali",
+        "rarity": 5,
+        "element": "Cryo",
+        "weapon": "Catalyst",
+        "id": "Citlali",
+        "gameId": "Citlali"
+    },
+    {
         "name": "Clorinde",
         "rarity": 5,
         "element": "Electro",
@@ -376,6 +384,14 @@
         "gameId": "Layla"
     },
     {
+        "name": "Lan Yan",
+        "rarity": 4,
+        "element": "Anemo",
+        "weapon": "Catalyst",
+        "id": "LanYan",
+        "gameId": "Lanyan"
+    },
+    {
         "name": "Lisa",
         "rarity": 4,
         "element": "Electro",
@@ -398,6 +414,14 @@
         "weapon": "Bow",
         "id": "Lyney",
         "gameId": "Liney"
+    },
+    {
+        "name": "Mavuika",
+        "rarity": 5,
+        "element": "Pyro",
+        "weapon": "Claymore",
+        "id": "Mavuika",
+        "gameId": "Mavuika"
     },
     {
         "name": "Mika",
