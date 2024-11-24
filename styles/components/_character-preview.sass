@@ -12,8 +12,11 @@
     background-repeat: no-repeat
     border: 5px solid #fff
     box-shadow: 0 0 1rem rgba(#000, 0.1)
+    box-sizing: border-box
     transition: transform 0.2s
     margin-bottom: 2rem
+    scroll-snap-align: start
+
 
     &:hover
         transform: scale(1.01)
@@ -52,8 +55,6 @@
 #character-preview-container
     padding: 0
     height: 100vh
-    overflow-y: scroll
-    display: flex
 
     hr
         margin: 0
@@ -62,9 +63,6 @@
         margin-bottom: 2rem
 
 #filters-top-menu
-    position: sticky
-    top: 0
-    z-index: 10
     padding: 2rem
     background-color: vars.$palette-secondary-dark
 
@@ -86,6 +84,7 @@
 
 #character-list
     padding: 2rem
+    overflow-y: scroll
 
 ::-webkit-scrollbar
     width: 12px
