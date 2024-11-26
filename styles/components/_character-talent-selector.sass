@@ -1,0 +1,75 @@
+@use 'sass-mq' as *
+
+.character-talent-selector
+    display: flex
+    justify-content: space-around
+
+    @include mq($from: mobile, $until: tablet)
+        flex-direction: column
+
+.character-talent__field
+    flex: 1
+    padding: 1rem
+    margin: 0 0.5rem
+    background-color: var(--color-secondary-dark)
+    border-radius: 1rem
+    position: relative
+
+    h3
+        margin: 0
+        font-size: 1rem
+        font-family: var(--font-young-serif)
+        letter-spacing: 0.1rem
+
+    p
+        margin: 0
+        text-align: justify
+        font-size: 1rem
+
+    @include mq($from: mobile, $until: tablet)
+        margin: 0.5rem 0
+
+.character-talent__field__skillButton
+    position: absolute
+    right: 0.5rem
+    top: 0.5rem
+    font-family: var(--font-young-serif)
+    font-size: 5rem
+    transform: translate(10%, -22%)
+    opacity: 3%
+
+.character-talent__field:nth-child(n+4)
+    @include mq($from: mobile, $until: widescreen)
+        display: none
+
+.character-talent__field__title-container
+    text-align: center
+
+
+.character-talent__level-selector-container
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: row
+    margin-top: 1rem
+
+.character-talent-level-selector
+    display: none
+    width: 5rem
+    padding: 0.5rem
+    font-size: 1rem
+    color: var(--color-text)
+    background-color: var(--color-secondary-light)
+    border: 1px solid var(--color-border)
+    border-radius: 0.5rem
+
+.character-talent__level-selector-value
+    padding: 0.5rem 1rem
+    margin-left: 1rem
+    font-size: 1rem
+    color: var(--color-text)
+    background-color: var(--color-secondary-light)
+    border: 1px solid var(--color-border)
+    border-radius: 0.5rem
+    width: 1.5rem
+    text-align: center

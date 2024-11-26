@@ -8,6 +8,10 @@
     padding: 2rem
     font-family: var(--font-questrial-sans)
     font-size: 1rem
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2)
+    z-index: 1000
+    position: relative
+    background-color: var(vars.$palette-primary-dark)
 
     h1
         margin: 0
@@ -56,7 +60,7 @@
     display: none
     border: none
     background-color: transparent
-    color: vars.$palette-text
+    color: var(vars.$palette-text)
     justify-content: center
     align-items: center
 
@@ -68,7 +72,7 @@
     list-style-type: none
 
     @include mq($from: mobile, $until: tablet)
-        background-color: vars.$palette-secondary-dark
+        background-color: var(vars.$palette-secondary-dark)
         flex-direction: column
         padding: 0
 
@@ -82,7 +86,7 @@
     @include mq($from: mobile, $until: tablet)
         flex-direction: column
         padding: 0 1rem 1rem 1rem
-        border-bottom: 1px solid vars.$palette-secondary-light
+        border-bottom: 1px solid var(vars.$palette-secondary-light)
         margin-bottom: 1rem
 
 #gi-nav__list li:first-child
@@ -90,7 +94,7 @@
         padding-top: 1rem
 
 #gi-nav a
-    color: vars.$palette-text
+    color: var(vars.$palette-text)
     text-decoration: none
     margin: 0 1rem
 

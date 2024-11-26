@@ -11,7 +11,7 @@ export function HomeDescription() {
           and check out their damage output over time.
         </p>
         <div className='primary-light-container'>
-          <span className='app-description' style={{"textAlign": "center", "color": "#2d3250"}}>
+          <span className='app-description-details' style={{"textAlign": "center"}}>
             <b>So tell me, what are you cooking today?</b>
           </span>
         </div>

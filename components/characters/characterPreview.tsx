@@ -25,8 +25,6 @@ export function CharacterPreview() {
             .then(characterList => {
                 setCharacterList(characterList);
 
-                console.log(characterList)
-
                 const elementSet = new Set<string>(characterList.map((character: CharacterBaseModel) => character.element));
                 const weaponSet = new Set<string>(characterList.map((character: CharacterBaseModel) => character.weapon));
 

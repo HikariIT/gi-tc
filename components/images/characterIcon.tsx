@@ -12,7 +12,7 @@ export function CharacterIcon(props: CharacterIconProps) {
     return (
         <div className="character-icon">
             <Image
-                src={ResourceManager.getCharacterIconUrl(LocalImageProvider, props.id, props.gameId)}
+                src={ResourceManager.getCharacterIconUrlByGameId(LocalImageProvider, props.id, props.gameId)}
                 alt={props.id}
                 width={props.width || 100}
                 height={props.height || 100}

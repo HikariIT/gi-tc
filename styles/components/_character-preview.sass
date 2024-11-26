@@ -1,6 +1,10 @@
 @use '../abstracts/_variables.sass' as vars
 @use 'sass-mq' as *
 
+#character-list a
+    text-decoration: none
+    color: var(vars.$palette-primary-dark)
+
 .character-horizontal-card
     display: flex
     flex-direction: row
@@ -16,7 +20,6 @@
     transition: transform 0.2s
     margin-bottom: 2rem
     scroll-snap-align: start
-
 
     &:hover
         transform: scale(1.01)
@@ -35,7 +38,7 @@
         margin-right: 2rem
 
     span
-        color: vars.$palette-secondary-dark
+        color: var(vars.$palette-secondary-dark)
         font-size: 1.5rem
 
         @include mq($from: mobile, $until: tablet)
@@ -43,13 +46,13 @@
 
     h1
         font-size: 2rem
-        color: vars.$palette-primary-dark
+        color: var(vars.$palette-primary-dark)
         padding: 0 1rem 0 0
         margin: 0 1rem 0 0
-        border-right: 2px solid vars.$palette-secondary-dark
+        border-right: 2px solid var(vars.$palette-secondary-dark)
 
         @include mq($from: mobile, $until: tablet)
-            font-size: 1.5rem
+            font-size: 1rem
             border: none
 
 #character-preview-container
@@ -59,12 +62,12 @@
     hr
         margin: 0
         border: 0
-        border-top: 2px solid vars.$palette-secondary-light
+        border-top: 2px solid var(vars.$palette-secondary-light)
         margin-bottom: 2rem
 
 #filters-top-menu
     padding: 2rem
-    background-color: vars.$palette-secondary-dark
+    background-color: var(vars.$palette-secondary-dark)
 
 #filters-and-search
     display: flex
@@ -73,7 +76,7 @@
     margin-bottom: 1rem
 
     input
-        color: vars.$palette-primary-dark
+        color: var(vars.$palette-primary-dark)
         padding: 0.5rem
         @include mq($from: mobile, $until: tablet)
             margin-top: 0.5rem
@@ -90,4 +93,4 @@
     width: 12px
 
 ::-webkit-scrollbar-thumb
-    background: vars.$palette-secondary-light
+    background: var(vars.$palette-secondary-light)

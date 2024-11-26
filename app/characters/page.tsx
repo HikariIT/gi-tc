@@ -1,4 +1,6 @@
 import { CharacterPreview } from "../../components/characters";
+import '../../styles/style.sass';
+import '../../styles/pages/_home.sass';
 
 export default function CharactersPage() {
     return (
